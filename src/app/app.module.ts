@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
-import { MovieComponent } from './movie/movie.component';
-import { SerieComponent } from './serie/serie.component';
-import { VideogameComponent } from './videogame/videogame.component';
+import { BookComponent } from './components/book/book.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { SerieComponent } from './components/serie/serie.component';
+import { VideogameComponent } from './components/videogame/videogame.component';
 
 @NgModule({
   declarations: [
