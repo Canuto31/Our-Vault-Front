@@ -14,7 +14,7 @@ import { GameStoreComponent } from './components/game-store/game-store.component
 import { StateComponent } from './components/state/state.component';
 import { StreamPageComponent } from './components/stream-page/stream-page.component';
 import { TypeComponent } from './components/type/type.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [

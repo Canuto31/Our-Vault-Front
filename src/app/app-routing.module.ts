@@ -10,7 +10,7 @@ import { StateComponent } from './components/state/state.component';
 import { StreamPageComponent } from './components/stream-page/stream-page.component';
 import { TypeComponent } from './components/type/type.component';
 import { VideogameComponent } from './components/videogame/videogame.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
