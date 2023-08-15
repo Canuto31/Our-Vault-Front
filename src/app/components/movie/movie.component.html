@@ -2,7 +2,7 @@
 <ul>
     <li *ngFor="let movie of movies">
         <h3>{{ movie.name }}</h3>
-        <p>Books by {{ movie.name }}:</p>
+        <p>Category:  {{ movie.category.name }}</p>
         <!-- <ul>
             <li *ngFor="let book of author.books">
                 {{ book.name }} (Category: {{ book.category.name }})

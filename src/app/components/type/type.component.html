@@ -2,11 +2,17 @@
 <ul>
     <li *ngFor="let type of types">
         <h3>{{ type.name }}</h3>
-        <p>Books by {{ type.name }}:</p>
-        <!-- <ul>
-            <li *ngFor="let book of author.books">
-                {{ book.name }} (Category: {{ book.category.name }})
+        <p>Categories for {{ type.name }}s:</p>
+        <ul>
+            <li *ngFor="let category of type.categories">
+                {{ category.name }}
             </li>
-        </ul> -->
+        </ul>
+        <p>States for {{ type.name }}s:</p>
+        <ul>
+            <li *ngFor="let state of type.states">
+                {{ state.name }}
+            </li>
+        </ul>
     </li>
 </ul>
