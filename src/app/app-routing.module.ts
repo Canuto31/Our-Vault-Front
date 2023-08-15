@@ -10,8 +10,10 @@ import { StateComponent } from './components/state/state.component';
 import { StreamPageComponent } from './components/stream-page/stream-page.component';
 import { TypeComponent } from './components/type/type.component';
 import { VideogameComponent } from './components/videogame/videogame.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'authors', component: AuthorComponent},
   { path: 'books', component: BookComponent},
   { path: 'categories', component: CategoryComponent},
@@ -21,7 +23,8 @@ const routes: Routes = [
   { path: 'states', component: StateComponent},
   { path: 'streamPages', component: StreamPageComponent},
   { path: 'types', component: TypeComponent},
-  { path: 'videogames', component: VideogameComponent}
+  { path: 'videogames', component: VideogameComponent},
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
