@@ -1,1 +1,12 @@
-<p>author works!</p>
+<h2>List of Authors</h2>
+<ul>
+    <li *ngFor="let author of authors">
+        <h3>{{ author.name }}</h3>
+        <p>Books by {{ author.name }}:</p>
+        <!-- <ul>
+            <li *ngFor="let book of author.books">
+                {{ book.name }} (Category: {{ book.category.name }})
+            </li>
+        </ul> -->
+    </li>
+</ul>
