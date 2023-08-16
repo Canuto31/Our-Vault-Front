@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookComponent } from './components/book/book.component';
+// import { BookComponent } from './book/book-list/book-list.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { SerieComponent } from './components/serie/serie.component';
 import { VideogameComponent } from './components/videogame/videogame.component';
@@ -23,11 +23,11 @@ import {
   IgxButtonModule,
   IgxIconModule
 } from 'igniteui-angular';
+import { BookModule } from './book/book.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
     MovieComponent,
     SerieComponent,
     VideogameComponent,
@@ -47,7 +47,8 @@ import {
     TooltipModule.forRoot(),
     IgxNavbarModule,
     BrowserAnimationsModule,
-    IgxButtonModule, IgxIconModule
+    IgxButtonModule, IgxIconModule,
+    BookModule
   ],
   providers: [],
   bootstrap: [AppComponent]

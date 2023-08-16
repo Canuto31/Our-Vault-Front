@@ -2,6 +2,7 @@
 .custom-card {
     height: 300px; /* Ajusta la altura según tus preferencias */
     overflow: hidden;
+    background-color: #333;
   }
   
   /* Asegurar que el contenido interno se ajuste correctamente */
@@ -9,6 +10,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-top: 0%;
   }
   
   /* Recortar el contenido de la descripción y agregar puntos suspensivos */
@@ -16,6 +18,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  h5.card-title {
+    margin-trim: in-flow;
   }
 
   /* Estilo para las imágenes en las tarjetas */

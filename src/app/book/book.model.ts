@@ -1,6 +1,6 @@
-import { Category } from './category.model';
-import { Author } from './author.model';
-import { State } from './state.model';
+import { Category } from '../models/category.model';
+import { Author } from '../models/author.model';
+import { State } from '../models/state.model';
 
 export interface Book {
     id: number;

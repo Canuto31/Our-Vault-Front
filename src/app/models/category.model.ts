@@ -1,5 +1,5 @@
 import { Type } from './type.model';
-import { Book } from './book.model';
+import { Book } from '../book/book.model';
 import { Videogame } from './videogame.model';
 import { Movie } from './movie.model';
 import { Serie } from './serie.model';

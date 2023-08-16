@@ -1,12 +1,38 @@
 <h2>List of Authors</h2>
-<ul>
+<!-- <ul>
     <li *ngFor="let movie of movies">
         <h3>{{ movie.name }}</h3>
         <p>Category:  {{ movie.category.name }}</p>
-        <!-- <ul>
-            <li *ngFor="let book of author.books">
-                {{ book.name }} (Category: {{ book.category.name }})
-            </li>
-        </ul> -->
     </li>
-</ul>
+</ul> -->
+
+<div class="row m-0 d-felx justify-content-center flex-wrap">
+    <div class="card col-3 text-white shadow rounded m-1" style="max-width: 540px" *ngFor="let movie of movies">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ movie.image }}" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.name }}</h5>
+              <p class="card-text">
+                  {{ movie.category.name }}
+              </p>
+              <small class="text-body-secondary text-white">
+                  <p class="card-text">{{ movie.duration }} minutos</p>
+                  <p class="card-text">{{ movie.streamPage.name }}</p>
+                  <p class="card-text">{{ movie.trailer }} minutos</p>
+                  <p class="card-text">{{ movie.state.name }}</p>
+                  <p class="card-text">{{ movie.rate }}</p>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div>
+    <button class="btn btn-primary" (click)="verPrimero()">Ver primera</button>
+    <button class="btn btn-primary"(click)="verPorTexto('hard')">Ver segunda</button>
+</div>
+

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthorComponent } from './components/author/author.component';
-import { BookComponent } from './components/book/book.component';
+import { BookListComponent } from './book/components/book-list/book-list.component';
 import { CategoryComponent } from './components/category/category.component';
 import { GameStoreComponent } from './components/game-store/game-store.component';
 import { MovieComponent } from './components/movie/movie.component';
@@ -15,7 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'authors', component: AuthorComponent},
-  { path: 'books', component: BookComponent},
+  { path: 'books', component: BookListComponent},
   { path: 'categories', component: CategoryComponent},
   { path: 'gameStores', component: GameStoreComponent},
   { path: 'movies', component: MovieComponent},
