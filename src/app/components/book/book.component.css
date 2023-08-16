@@ -1,0 +1,27 @@
+/* Establecer la altura fija para todas las tarjetas */
+.custom-card {
+    height: 300px; /* Ajusta la altura según tus preferencias */
+    overflow: hidden;
+  }
+  
+  /* Asegurar que el contenido interno se ajuste correctamente */
+  .custom-card .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Recortar el contenido de la descripción y agregar puntos suspensivos */
+  .custom-card .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Estilo para las imágenes en las tarjetas */
+.custom-card img {
+    height: 200px; /* Ajusta la altura según tus preferencias */
+    object-fit: cover; /* Ajusta el comportamiento de la imagen */
+  }
+  
+  

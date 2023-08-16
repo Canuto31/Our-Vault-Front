@@ -15,6 +15,14 @@ import { StateComponent } from './components/state/state.component';
 import { StreamPageComponent } from './components/stream-page/stream-page.component';
 import { TypeComponent } from './components/type/type.component';
 import { HomeComponent } from './components/home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  IgxNavbarModule,
+  IgxButtonModule,
+  IgxIconModule
+} from 'igniteui-angular';
 
 @NgModule({
   declarations: [
@@ -33,10 +41,16 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    HttpClientModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    TooltipModule.forRoot(),
+    IgxNavbarModule,
+    BrowserAnimationsModule,
+    IgxButtonModule, IgxIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
