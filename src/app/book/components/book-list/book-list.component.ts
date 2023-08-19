@@ -113,11 +113,26 @@ export class BookListComponent implements OnInit {
   }
 
   applyFilters(): void {
+    // this.filteredBooks = this.books.filter(book => {
+    //   const categoryFilter = this.selectedCategories[book.category?.name] !== undefined ? this.selectedCategories[book.category.name] : true;
+    //   const stateFilter = this.selectedStates[book.state?.name] !== undefined ? this.selectedStates[book.state.name] : true;
+    //   const authorFilter = this.selectedAuthors[book.author?.name] !== undefined ? this.selectedAuthors[book.author.name] : true;
+    //   console.log(`Book: ${book.name}, Category: ${categoryFilter}, State: ${stateFilter}, Author: ${authorFilter}`);
+    //   return categoryFilter && stateFilter && authorFilter;
+    // });
     this.filteredBooks = this.books.filter(book => {
-      const categoryFilter = this.selectedCategories[book.category?.name] !== undefined ? this.selectedCategories[book.category.name] : true;
-      const stateFilter = this.selectedStates[book.state?.name] !== undefined ? this.selectedStates[book.state.name] : true;
-      const authorFilter = this.selectedAuthors[book.author?.name] !== undefined ? this.selectedAuthors[book.author.name] : true;
-      console.log(`Book: ${book.name}, Category: ${categoryFilter}, State: ${stateFilter}, Author: ${authorFilter}`);
+      const categoryFilter = Object.values(this.selectedCategories).some(value => value)
+        ? this.selectedCategories[book.category?.name] || false
+        : true;
+  
+      const stateFilter = Object.values(this.selectedStates).some(value => value)
+        ? this.selectedStates[book.state?.name] || false
+        : true;
+  
+      const authorFilter = Object.values(this.selectedAuthors).some(value => value)
+        ? this.selectedAuthors[book.author?.name] || false
+        : true;
+  
       return categoryFilter && stateFilter && authorFilter;
     });
   }
