@@ -55,7 +55,6 @@ export class BookListComponent implements OnInit {
       this.books = books;
       this.filteredBooks = books;
       this.filteredBooksByCheckbox = books;
-      console.log(this.books.length > 0);
       if (this.books.length > 0 && this.books[0].category) {
         console.log(this.selectedCategories[this.books[0].category.name]);
       } else {
@@ -65,19 +64,21 @@ export class BookListComponent implements OnInit {
   }
 
   getCategories(): void {
-    this.categoryService
-      .getCategories()
-      .subscribe((categories) => (this.categories = categories));
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories.filter(category => category.types.some(type => type.name === "Book"));
+    });
   }
 
   getStates(): void {
-    this.stateService.getStates().subscribe((states) => (this.states = states));
+    this.stateService.getStates().subscribe((states) => {
+      this.states = states.filter(state => state.types.some(type => type.name === "Book"));
+    });
   }
 
   getAuthors(): void {
     this.authorService
       .getAuthors()
-      .subscribe((authors) => (this.authors = authors));
+      .subscribe(authors => this.authors = authors);
   }
 
   openBookModal(book: Book) {

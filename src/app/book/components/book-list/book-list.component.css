@@ -51,5 +51,52 @@
   max-height: 500px; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
 }
+
+/* Estilos para las etiquetas de filtro */
+.filter-label {
+  color: white; /* Cambia el color del texto a blanco */
+  display: block; /* Opcional, ajusta la presentación de las etiquetas */
+  margin-bottom: 8px; /* Opcional, agrega espacio entre etiquetas */
+}
+
+h4 {
+  color: white; /* Cambia el color del texto a blanco */
+}
+
+/* Estilo para quitar el margen superior del h4 en la lista desplegable */
+details summary h4 {
+  margin-top: 0;
+}
+
+/* Estilos para la lista desplegable */
+details {
+  background-color: #333; /* Fondo de la lista desplegable */
+  color: white; /* Color del texto en la cabecera */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Cambiar estilo del título cuando la lista está abierta */
+details[open] summary {
+  font-weight: bold;
+}
+
+/* Estilos para el contenido oculto de la lista */
+details summary::-webkit-details-marker {
+  display: none; /* Ocultar el icono de flecha predeterminado */
+}
+
+.filter-options {
+  margin-left: 20px; /* Espaciado para los checkbox dentro de la lista desplegable */
+}
+
+/* Alinear los checkbox uno debajo del otro */
+.filter-options label {
+  display: block;
+  margin-top: 5px;
+}
+
   
   
