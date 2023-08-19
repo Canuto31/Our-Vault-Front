@@ -24,6 +24,7 @@ import {
   IgxIconModule
 } from 'igniteui-angular';
 import { BookModule } from './book/book.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { BookModule } from './book/book.module';
     IgxNavbarModule,
     BrowserAnimationsModule,
     IgxButtonModule, IgxIconModule,
-    BookModule
+    BookModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
