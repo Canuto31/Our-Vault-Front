@@ -86,7 +86,10 @@ h5.card-title {
 
 /* Otros estilos generales */
 .container {
+  margin: 0; /* Eliminar el margen */
+  padding: 0;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .card {
@@ -95,4 +98,22 @@ h5.card-title {
 
 details summary h4 {
   margin-top: 0;
+}
+
+/* Estilos para la lista de libros */
+.book-list-container {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-height: calc(100vh - 150px); /* Resta el espacio del encabezado, panel de filtros y margen inferior */
+  overflow-y: auto;
+}
+
+.filters-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+h2 {
+  /* Estilos para el título */
+  margin-top: 0; /* Ajusta el margen superior según lo necesites */
+  color: white;;
 }

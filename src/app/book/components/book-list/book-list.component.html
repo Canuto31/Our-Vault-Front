@@ -1,49 +1,53 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
+      <div class="filters">
+        <h2 class="mb-4">List of Books</h2>
+        <details [open]="filtersOpen">
+          <summary class="filter-title" (click)="toggleFilters()">Filters</summary>
+          <input type="text" class="form-control mb-3" placeholder="Search" (input)="applySearch($event)" />
+          <!-- Agrega tus filtros aquí -->
+  
+          <div class="filter-section">
+            <details>
+              <summary><h4>Category</h4></summary>
+              <div class="filter-options">
+                <label *ngFor="let category of categories">
+                  <input type="checkbox" [checked]="selectedCategories[category.name]" (change)="toggleCategory(category.name)" /> {{ category.name }}
+                </label>
+              </div>
+            </details>
+          </div>
+          <div class="filter-section">
+            <details>
+              <summary><h4>State</h4></summary>
+              <div class="filter-options">
+                <label *ngFor="let state of states">
+                  <input type="checkbox" [checked]="selectedStates[state.name]" (change)="toggleState(state.name)" /> {{ state.name }}
+                </label>
+              </div>
+            </details>
+          </div>
+          <div class="filter-section">
+            <details>
+              <summary><h4>Author</h4></summary>
+              <div class="filter-options">
+                <label *ngFor="let author of authors">
+                  <input type="checkbox" [checked]="selectedAuthors[author.name]" (change)="toggleAuthor(author.name)" /> {{ author.name }}
+                </label>
+              </div>
+            </details>
+          </div>
+        </details>
+      </div>
       <!-- Panel de navegación con filtros -->
-      <details class="filters" [open]="filtersOpen">
-        <summary class="filter-title" (click)="toggleFilters()">Filters</summary>
-        <input type="text" class="form-control mb-3" placeholder="Search" (input)="applySearch($event)" />
-        <!-- Agrega tus filtros aquí -->
-
-        <div class="filter-section">
-          <details>
-            <summary><h4>Category</h4></summary>
-            <div class="filter-options">
-              <label *ngFor="let category of categories">
-                <input type="checkbox" [checked]="selectedCategories[category.name]" (change)="toggleCategory(category.name)" /> {{ category.name }}
-              </label>
-            </div>
-          </details>
-        </div>
-        <div class="filter-section">
-          <details>
-            <summary><h4>State</h4></summary>
-            <div class="filter-options">
-              <label *ngFor="let state of states">
-                <input type="checkbox" [checked]="selectedStates[state.name]" (change)="toggleState(state.name)" /> {{ state.name }}
-              </label>
-            </div>
-          </details>
-        </div>
-        <div class="filter-section">
-          <details>
-            <summary><h4>Author</h4></summary>
-            <div class="filter-options">
-              <label *ngFor="let author of authors">
-                <input type="checkbox" [checked]="selectedAuthors[author.name]" (change)="toggleAuthor(author.name)" /> {{ author.name }}
-              </label>
-            </div>
-          </details>
-        </div>
-      </details>
+      
     </div>
-    <div class="col-lg-9">
+    <div [ngClass]="bookListColumnClass">
       <!-- Lista de libros con scroll -->
-      <h2 class="mb-4">List of Books</h2>
-      <div class="book-list">
-        <div class="card custom-card" *ngFor="let book of filteredBooks; let i = index">
+      <!-- <h2 class="mb-4">List of Books</h2> -->
+      <div class="d-flex flex-wrap">
+        <div class="card custom-card mx-2 mb-3" *ngFor="let book of filteredBooks; let i = index">
           <!-- Detalles del libro -->
           <div class="card custom-card" (click)="openBookModal(book)">
             <img src="{{ book.image }}" class="card-img-top" alt="Book Image" />

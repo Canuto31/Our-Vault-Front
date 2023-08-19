@@ -32,6 +32,7 @@ export class BookListComponent implements OnInit {
   authors: Author[] = [];
 
   filtersOpen = true;
+  bookListColumnClass = 'col-lg-9';
 
   constructor(
     private bookService: BookService,
@@ -164,6 +165,21 @@ export class BookListComponent implements OnInit {
   }
 
   toggleFilters() {
-    this.filtersOpen = !this.filtersOpen;
+    // this.filtersOpen = !this.filtersOpen;
+    setTimeout(() => {
+      this.filtersOpen = !this.filtersOpen;
+      this.updateBookListClass();
+      // this.bookListColumnClass =  this.filtersOpen ? 'book-list' : 'book-list-full';
+      // this.bookListColumnClass = this.filtersOpen ? 'book-list-full' : 'book-list';
+    });
+  }
+
+  updateBookListClass() {
+    if (this.filtersOpen) {
+      this.bookListColumnClass = 'col-lg-9';
+    } else {
+      // Si los filtros están cerrados, ajusta la clase CSS de la lista de libros para que ocupe todo el ancho
+      this.bookListColumnClass = 'col-lg-12';
+    }
   }
 }
