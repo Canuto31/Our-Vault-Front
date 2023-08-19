@@ -54,49 +54,66 @@
 
 /* Estilos para las etiquetas de filtro */
 .filter-label {
-  color: white; /* Cambia el color del texto a blanco */
+  /* color: white;  */
   display: block; /* Opcional, ajusta la presentación de las etiquetas */
   margin-bottom: 8px; /* Opcional, agrega espacio entre etiquetas */
 }
 
-h4 {
-  color: white; /* Cambia el color del texto a blanco */
+/* h4 {
+  color: white; 
+} */
+
+/* Estilos para el panel de filtros */
+.filters {
+  background-color: black;
+  /* color: white; */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-/* Estilo para quitar el margen superior del h4 en la lista desplegable */
+/* Estilos para la lista desplegable */
+.filter-section {
+  margin-top: 10px;
+  background-color: #f8f8f8; /* Cambia el color de fondo según tus preferencias */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.filter-section summary {
+  cursor: pointer;
+}
+
+.filter-options {
+  margin-left: 10px;
+}
+
+/* Estilos para el botón de expandir/ocultar */
+.filters summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Estilos para la lista de libros */
+.book-list {
+  max-height: 500px; /* Ajusta la altura máxima deseada */
+  overflow-y: auto;
+}
+
+/* Otros estilos generales */
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
 details summary h4 {
   margin-top: 0;
 }
 
-/* Estilos para la lista desplegable */
-details {
-  background-color: #333; /* Fondo de la lista desplegable */
-  color: white; /* Color del texto en la cabecera */
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Cambiar estilo del título cuando la lista está abierta */
-details[open] summary {
-  font-weight: bold;
-}
-
-/* Estilos para el contenido oculto de la lista */
-details summary::-webkit-details-marker {
-  display: none; /* Ocultar el icono de flecha predeterminado */
-}
-
-.filter-options {
-  margin-left: 20px; /* Espaciado para los checkbox dentro de la lista desplegable */
-}
-
-/* Alinear los checkbox uno debajo del otro */
-.filter-options label {
+/* Estilos para las etiquetas de filtro */
+.filter-section label {
   display: block;
-  margin-top: 5px;
+  margin-bottom: 8px; /* Opcional, agrega espacio entre etiquetas */
 }
-
-  
-  

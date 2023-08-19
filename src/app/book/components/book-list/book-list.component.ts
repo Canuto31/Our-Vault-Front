@@ -31,6 +31,8 @@ export class BookListComponent implements OnInit {
   states: State[] = [];
   authors: Author[] = [];
 
+  filtersOpen = true;
+
   constructor(
     private bookService: BookService,
     private modalService: NgbModal,
@@ -144,5 +146,9 @@ export class BookListComponent implements OnInit {
   toggleAuthor(authorName: string) {
     this.selectedAuthors[authorName] = !this.selectedAuthors[authorName];
     this.applyFilters();
+  }
+
+  toggleFilters() {
+    this.filtersOpen = !this.filtersOpen;
   }
 }

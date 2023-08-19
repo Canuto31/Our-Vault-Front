@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-lg-3">
       <!-- Panel de navegación con filtros -->
-      <div class="filters">
+      <details class="filters" [open]="filtersOpen">
+        <summary (click)="toggleFilters()">Filters</summary>
         <input type="text" class="form-control mb-3" placeholder="Search" (input)="applySearch($event)" />
         <!-- Agrega tus filtros aquí -->
 
@@ -36,7 +37,7 @@
             </div>
           </details>
         </div>
-      </div>
+      </details>
     </div>
     <div class="col-lg-9">
       <!-- Lista de libros con scroll -->
