@@ -117,3 +117,7 @@ details summary h4 {
   display: block;
   margin-bottom: 8px; /* Opcional, agrega espacio entre etiquetas */
 }
+
+.filter-title {
+  color: #f8f8f8;
+}
