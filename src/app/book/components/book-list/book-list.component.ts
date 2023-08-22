@@ -182,4 +182,15 @@ export class BookListComponent implements OnInit {
       this.bookListColumnClass = 'col-lg-12';
     }
   }
+
+  formatPrice(price: number): string {
+    const formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,  // Establecer el número mínimo de dígitos decimales a 0
+      maximumFractionDigits: 0   // Establecer el número máximo de dígitos decimales a 0
+    });
+    return formatter.format(price);
+  }
+  
 }

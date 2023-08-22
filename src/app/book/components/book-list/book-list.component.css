@@ -42,10 +42,10 @@
 }
 
 /* Estilos para la lista de libros */
-.book-list {
+/* .book-list {
   max-height: 500px;
   overflow-y: auto;
-}
+} */
 
 /* Estilos para las etiquetas de filtro */
 .filter-title {
@@ -53,40 +53,40 @@
 }
 
 /* Establecer la altura fija para todas las tarjetas */
-.custom-card {
+/* .custom-card {
   height: 300px;
   overflow: hidden;
   background-color: #333;
-}
+} */
 
 /* Asegurar que el contenido interno se ajuste correctamente */
-.custom-card .card-body {
+/* .custom-card .card-body {
   display: flex;
   flex-direction: column;
   height: 100%;
   padding-top: 0%;
-}
+} */
 
 /* Recortar el contenido de la descripción y agregar puntos suspensivos */
-.custom-card .card-text {
+/* .custom-card .card-text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
-h5.card-title {
+/* h5.card-title {
   margin-trim: in-flow;
-}
+} */
 
 /* Estilo para las imágenes en las tarjetas */
-.custom-card img {
+/* .custom-card img {
   height: 200px;
   object-fit: cover;
-}
+} */
 
 /* Otros estilos generales */
 .container {
-  margin: 0; /* Eliminar el margen */
+  margin: 0;
   padding: 0;
   margin-top: 20px;
   margin-left: 20px;
@@ -101,19 +101,108 @@ details summary h4 {
 }
 
 /* Estilos para la lista de libros */
-.book-list-container {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  max-height: calc(100vh - 150px); /* Resta el espacio del encabezado, panel de filtros y margen inferior */
+/* .book-list-container {
+  width: 100%; 
+  max-height: calc(100vh - 150px);
   overflow-y: auto;
-}
+} */
 
-.filters-container {
+/* .filters-container {
   display: flex;
   align-items: flex-start;
-}
+} */
 
 h2 {
-  /* Estilos para el título */
-  margin-top: 0; /* Ajusta el margen superior según lo necesites */
+  margin-top: 0; 
   color: white;;
+}
+
+/*NUEVO*/
+.card-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card {
+  /* width: 100%; */
+  height: 100%;
+  border-radius: inherit;
+}
+
+.card .front-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .front-content p {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  color: #e8e8e8;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translatex(96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .content .heading {
+  /* font-size: 32px;
+  font-weight: 700; */
+  font-size: 24px; /* Tamaño del título */
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+}
+
+.card:hover .front-content {
+  transform: translateX(20%);
+}
+
+.card:hover .front-content p {
+  opacity: 0;
+}
+
+.card .content .information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 5px; /* Espaciado entre las líneas de información */
+}
+
+.card .content .information p {
+  margin: 0; /* Elimina el margen predeterminado */
 }
